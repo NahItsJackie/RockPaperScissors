@@ -13,11 +13,7 @@ let personChoice;
 let computerRandomizer;
 let computerChoice;
 
-document.getElementById("wins").innerHTML = playerProfile.wins;
-document.getElementById("losses").innerHTML = playerProfile.losses;
-document.getElementById("ties").innerHTML = playerProfile.ties;
-document.getElementById("playerChoices").innerHTML = playerProfile.choices;
-document.getElementById("computerChoices").innerHTML = computerProfile.choices;
+updateStats()
 
 function rpsInit() {
     let personChoice = window.prompt("Rock (R), Paper (P), or Scissors (S): ");
@@ -78,23 +74,17 @@ function roundResult (personChoice, computerChoice) {
                 case "R":
                     playerProfile.ties = playerProfile.ties + 1;
                     window.alert("Person choice: " + personChoice.toUpperCase() + ", Computer choice: " + computerChoice.toUpperCase() + " You tied!");
-                    document.getElementById("ties").innerHTML = playerProfile.ties;
-                    document.getElementById("playerChoices").innerHTML = playerProfile.choices;
-                    document.getElementById("computerChoices").innerHTML = computerProfile.choices;
+                    updateStats()
                     break;
                 case "P":
                     playerProfile.losses = playerProfile.losses + 1;
                     window.alert("Person choice: " + personChoice.toUpperCase() + ", Computer choice: " + computerChoice.toUpperCase() + " You lost :(");
-                    document.getElementById("losses").innerHTML = playerProfile.losses;
-                    document.getElementById("playerChoices").innerHTML = playerProfile.choices;
-                    document.getElementById("computerChoices").innerHTML = computerProfile.choices;
+                    updateStats()
                     break;
                 case "S":
                     playerProfile.wins = playerProfile.wins + 1;
                     window.alert("Person choice: " + personChoice.toUpperCase() + ", Computer choice: " + computerChoice.toUpperCase() + " You won!");
-                    document.getElementById("wins").innerHTML = playerProfile.wins;
-                    document.getElementById("playerChoices").innerHTML = playerProfile.choices;
-                    document.getElementById("computerChoices").innerHTML = computerProfile.choices;
+                    updateStats()
                     break;
             }
             break;
@@ -103,23 +93,17 @@ function roundResult (personChoice, computerChoice) {
                 case "R":
                     playerProfile.wins = playerProfile.wins + 1;
                     window.alert("Person choice: " + personChoice.toUpperCase() + ", Computer choice: " + computerChoice.toUpperCase() + " You won!");
-                    document.getElementById("wins").innerHTML = playerProfile.wins;
-                    document.getElementById("playerChoices").innerHTML = playerProfile.choices;
-                    document.getElementById("computerChoices").innerHTML = computerProfile.choices;
+                    updateStats()
                     break;
                 case "P":
                     playerProfile.ties = playerProfile.ties + 1;
                     window.alert("Person choice: " + personChoice.toUpperCase() + ", Computer choice: " + computerChoice.toUpperCase() + " You tied!");
-                    document.getElementById("ties").innerHTML = playerProfile.ties;
-                    document.getElementById("playerChoices").innerHTML = playerProfile.choices;
-                    document.getElementById("computerChoices").innerHTML = computerProfile.choices;
+                    updateStats()
                     break;
                 case "S":
                     playerProfile.losses = playerProfile.losses + 1;
                     window.alert("Person choice: " + personChoice.toUpperCase() + ", Computer choice: " + computerChoice.toUpperCase() + " You lost :(");
-                    document.getElementById("losses").innerHTML = playerProfile.losses;
-                    document.getElementById("playerChoices").innerHTML = playerProfile.choices;
-                    document.getElementById("computerChoices").innerHTML = computerProfile.choices;
+                    updateStats()
                     break;
             }
             break;
@@ -128,23 +112,17 @@ function roundResult (personChoice, computerChoice) {
                 case "R":
                     playerProfile.losses = playerProfile.losses + 1;
                     window.alert("Person choice: " + personChoice.toUpperCase() + ", Computer choice: " + computerChoice.toUpperCase() + " You lost :(");
-                    document.getElementById("losses").innerHTML = playerProfile.losses;
-                    document.getElementById("playerChoices").innerHTML = playerProfile.choices;
-                    document.getElementById("computerChoices").innerHTML = computerProfile.choices;
+                    updateStats()
                     break;
                 case "P":
                     playerProfile.wins = playerProfile.wins + 1;
                     window.alert("Person choice: " + personChoice.toUpperCase() + ", Computer choice: " + computerChoice.toUpperCase() + " You won!");
-                    document.getElementById("wins").innerHTML = playerProfile.wins;
-                    document.getElementById("playerChoices").innerHTML = playerProfile.choices;
-                    document.getElementById("computerChoices").innerHTML = computerProfile.choices;
+                    updateStats()
                     break;
                 case "S":
                     playerProfile.ties = playerProfile.ties + 1;
                     window.alert("Person choice: " + personChoice.toUpperCase() + ", Computer choice: " + computerChoice.toUpperCase() + " You tied!");
-                    document.getElementById("ties").innerHTML = playerProfile.ties;
-                    document.getElementById("playerChoices").innerHTML = playerProfile.choices;
-                    document.getElementById("computerChoices").innerHTML = computerProfile.choices;
+                    updateStats()
                     break;
             }
             break;
@@ -157,12 +135,8 @@ function quit() {
     // User clicked Cancel or closed the prompt
     let quit = window.confirm("Would you like to quit?");
     if (quit) {
-        document.getElementById("wins").innerHTML = playerProfile.wins;
-        document.getElementById("losses").innerHTML = playerProfile.losses;
-        document.getElementById("ties").innerHTML = playerProfile.ties;
-        document.getElementById("playerChoices").innerHTML = playerProfile.choices;
-        document.getElementById("computerChoices").innerHTML = computerProfile.choices;
-        
+        updateStats()
+
         window.alert(
             "Wins: " + playerProfile.wins +
             " Losses: " + playerProfile.losses +
@@ -173,4 +147,12 @@ function quit() {
     else {
         rpsInit()
     }
+}
+
+function updateStats() {
+    document.getElementById("wins").innerHTML = playerProfile.wins;
+    document.getElementById("losses").innerHTML = playerProfile.losses;
+    document.getElementById("ties").innerHTML = playerProfile.ties;
+    document.getElementById("playerChoices").innerHTML = playerProfile.choices;
+    document.getElementById("computerChoices").innerHTML = computerProfile.choices;
 }
