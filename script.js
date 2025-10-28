@@ -157,6 +157,12 @@ function quit() {
     // User clicked Cancel or closed the prompt
     let quit = window.confirm("Would you like to quit?");
     if (quit) {
+        document.getElementById("wins").innerHTML = playerProfile.wins;
+        document.getElementById("losses").innerHTML = playerProfile.losses;
+        document.getElementById("ties").innerHTML = playerProfile.ties;
+        document.getElementById("playerChoices").innerHTML = playerProfile.choices;
+        document.getElementById("computerChoices").innerHTML = computerProfile.choices;
+        
         window.alert(
             "Wins: " + playerProfile.wins +
             " Losses: " + playerProfile.losses +
