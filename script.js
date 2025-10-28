@@ -1,8 +1,9 @@
 const playerProfile = {
-  wins: 0,
-  losses: 0,
-  ties: 0,
-  choices: []
+    name: '',
+    wins: 0,
+    losses: 0,
+    ties: 0,
+    choices: []
 };
 
 const computerProfile = {
@@ -68,23 +69,22 @@ function roundResult (personChoice, computerChoice) {
     playerProfile.choices.push(personChoice.toUpperCase());
     computerProfile.choices.push(computerChoice.toUpperCase());
 
+    let result;
+
     switch (personChoice.toUpperCase()) {
         case "R":
             switch (computerChoice.toUpperCase()) {
                 case "R":
                     playerProfile.ties = playerProfile.ties + 1;
-                    window.alert("Person choice: " + personChoice.toUpperCase() + ", Computer choice: " + computerChoice.toUpperCase() + " You tied!");
-                    updateStats()
+                    result = 'You tied!';
                     break;
                 case "P":
                     playerProfile.losses = playerProfile.losses + 1;
-                    window.alert("Person choice: " + personChoice.toUpperCase() + ", Computer choice: " + computerChoice.toUpperCase() + " You lost :(");
-                    updateStats()
+                    result = 'You lost :(';
                     break;
                 case "S":
                     playerProfile.wins = playerProfile.wins + 1;
-                    window.alert("Person choice: " + personChoice.toUpperCase() + ", Computer choice: " + computerChoice.toUpperCase() + " You won!");
-                    updateStats()
+                    result = 'You won!';
                     break;
             }
             break;
@@ -92,18 +92,15 @@ function roundResult (personChoice, computerChoice) {
             switch (computerChoice.toUpperCase()) {
                 case "R":
                     playerProfile.wins = playerProfile.wins + 1;
-                    window.alert("Person choice: " + personChoice.toUpperCase() + ", Computer choice: " + computerChoice.toUpperCase() + " You won!");
-                    updateStats()
+                    result = 'You won!';
                     break;
                 case "P":
                     playerProfile.ties = playerProfile.ties + 1;
-                    window.alert("Person choice: " + personChoice.toUpperCase() + ", Computer choice: " + computerChoice.toUpperCase() + " You tied!");
-                    updateStats()
+                    result = 'You tied!';
                     break;
                 case "S":
                     playerProfile.losses = playerProfile.losses + 1;
-                    window.alert("Person choice: " + personChoice.toUpperCase() + ", Computer choice: " + computerChoice.toUpperCase() + " You lost :(");
-                    updateStats()
+                    result = 'You lost :(';
                     break;
             }
             break;
@@ -111,22 +108,22 @@ function roundResult (personChoice, computerChoice) {
             switch (computerChoice.toUpperCase()) {
                 case "R":
                     playerProfile.losses = playerProfile.losses + 1;
-                    window.alert("Person choice: " + personChoice.toUpperCase() + ", Computer choice: " + computerChoice.toUpperCase() + " You lost :(");
-                    updateStats()
+                    result = 'You lost :(';
                     break;
                 case "P":
                     playerProfile.wins = playerProfile.wins + 1;
-                    window.alert("Person choice: " + personChoice.toUpperCase() + ", Computer choice: " + computerChoice.toUpperCase() + " You won!");
-                    updateStats()
+                    result = 'You won!';
                     break;
                 case "S":
                     playerProfile.ties = playerProfile.ties + 1;
-                    window.alert("Person choice: " + personChoice.toUpperCase() + ", Computer choice: " + computerChoice.toUpperCase() + " You tied!");
-                    updateStats()
+                    result = 'You tied!';
                     break;
             }
             break;
     }
+
+    window.alert("Person choice: " + personChoice.toUpperCase() + ", Computer choice: " + computerChoice.toUpperCase() + " " + result);
+    updateStats()
 
     quit();
 }
