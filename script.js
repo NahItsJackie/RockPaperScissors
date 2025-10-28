@@ -5,6 +5,10 @@ const playerProfile = {
   choices: []
 };
 
+const computerProfile = {
+  choices: []
+};
+
 let personChoice;
 let computerRandomizer;
 let computerChoice;
@@ -12,7 +16,8 @@ let computerChoice;
 document.getElementById("wins").innerHTML = playerProfile.wins;
 document.getElementById("losses").innerHTML = playerProfile.losses;
 document.getElementById("ties").innerHTML = playerProfile.ties;
-document.getElementById("choices").innerHTML = playerProfile.choices;
+document.getElementById("playerChoices").innerHTML = playerProfile.choices;
+document.getElementById("computerChoices").innerHTML = computerProfile.choices;
 
 function rpsInit() {
     let personChoice = window.prompt("Rock (R), Paper (P), or Scissors (S): ");
@@ -45,17 +50,17 @@ function rpsInit() {
 }
 
 function computerRound (computerRandomizer) {
-    switch (computerRandomizer = getRandomInt(3)) {
-    case computerRandomizer = 0:
-        computerChoice = "R"
-        break;
-    case computerRandomizer = 1:
-        computerChoice = "S"
-        break;
-    case computerRandomizer = 2:
-        computerChoice = "P"
-        break;
+    computerRandomizer = getRandomInt(99);
+    if (computerRandomizer >= 0 && computerRandomizer <= 33) {
+        computerChoice = "R";
     }
+    else if (computerRandomizer >= 34 && computerRandomizer <= 66) {
+        computerChoice = "S";
+    }
+    else if (computerRandomizer >= 67 && computerRandomizer <= 100) {
+        computerChoice = "P";
+    }
+    
     return computerChoice;
 }
 
@@ -64,7 +69,8 @@ function getRandomInt(max) {
 }
 
 function roundResult (personChoice, computerChoice) {
-    playerProfile.choices.push(personChoice);
+    playerProfile.choices.push(personChoice.toUpperCase());
+    computerProfile.choices.push(computerChoice.toUpperCase());
 
     switch (personChoice.toUpperCase()) {
         case "R":
@@ -73,19 +79,22 @@ function roundResult (personChoice, computerChoice) {
                     playerProfile.ties = playerProfile.ties + 1;
                     window.alert("Person choice: " + personChoice.toUpperCase() + ", Computer choice: " + computerChoice.toUpperCase() + " You tied!");
                     document.getElementById("ties").innerHTML = playerProfile.ties;
-                    document.getElementById("choices").innerHTML = playerProfile.choices;
+                    document.getElementById("playerChoices").innerHTML = playerProfile.choices;
+                    document.getElementById("computerChoices").innerHTML = computerProfile.choices;
                     break;
                 case "P":
                     playerProfile.losses = playerProfile.losses + 1;
                     window.alert("Person choice: " + personChoice.toUpperCase() + ", Computer choice: " + computerChoice.toUpperCase() + " You lost :(");
                     document.getElementById("losses").innerHTML = playerProfile.losses;
-                    document.getElementById("choices").innerHTML = playerProfile.choices;
+                    document.getElementById("playerChoices").innerHTML = playerProfile.choices;
+                    document.getElementById("computerChoices").innerHTML = computerProfile.choices;
                     break;
                 case "S":
                     playerProfile.wins = playerProfile.wins + 1;
                     window.alert("Person choice: " + personChoice.toUpperCase() + ", Computer choice: " + computerChoice.toUpperCase() + " You won!");
                     document.getElementById("wins").innerHTML = playerProfile.wins;
-                    document.getElementById("choices").innerHTML = playerProfile.choices;
+                    document.getElementById("playerChoices").innerHTML = playerProfile.choices;
+                    document.getElementById("computerChoices").innerHTML = computerProfile.choices;
                     break;
             }
             break;
@@ -95,19 +104,22 @@ function roundResult (personChoice, computerChoice) {
                     playerProfile.wins = playerProfile.wins + 1;
                     window.alert("Person choice: " + personChoice.toUpperCase() + ", Computer choice: " + computerChoice.toUpperCase() + " You won!");
                     document.getElementById("wins").innerHTML = playerProfile.wins;
-                    document.getElementById("choices").innerHTML = playerProfile.choices;
+                    document.getElementById("playerChoices").innerHTML = playerProfile.choices;
+                    document.getElementById("computerChoices").innerHTML = computerProfile.choices;
                     break;
                 case "P":
                     playerProfile.ties = playerProfile.ties + 1;
                     window.alert("Person choice: " + personChoice.toUpperCase() + ", Computer choice: " + computerChoice.toUpperCase() + " You tied!");
                     document.getElementById("ties").innerHTML = playerProfile.ties;
-                    document.getElementById("choices").innerHTML = playerProfile.choices;
+                    document.getElementById("playerChoices").innerHTML = playerProfile.choices;
+                    document.getElementById("computerChoices").innerHTML = computerProfile.choices;
                     break;
                 case "S":
                     playerProfile.losses = playerProfile.losses + 1;
                     window.alert("Person choice: " + personChoice.toUpperCase() + ", Computer choice: " + computerChoice.toUpperCase() + " You lost :(");
                     document.getElementById("losses").innerHTML = playerProfile.losses;
-                    document.getElementById("choices").innerHTML = playerProfile.choices;
+                    document.getElementById("playerChoices").innerHTML = playerProfile.choices;
+                    document.getElementById("computerChoices").innerHTML = computerProfile.choices;
                     break;
             }
             break;
@@ -117,19 +129,22 @@ function roundResult (personChoice, computerChoice) {
                     playerProfile.losses = playerProfile.losses + 1;
                     window.alert("Person choice: " + personChoice.toUpperCase() + ", Computer choice: " + computerChoice.toUpperCase() + " You lost :(");
                     document.getElementById("losses").innerHTML = playerProfile.losses;
-                    document.getElementById("choices").innerHTML = playerProfile.choices;
+                    document.getElementById("playerChoices").innerHTML = playerProfile.choices;
+                    document.getElementById("computerChoices").innerHTML = computerProfile.choices;
                     break;
                 case "P":
                     playerProfile.wins = playerProfile.wins + 1;
                     window.alert("Person choice: " + personChoice.toUpperCase() + ", Computer choice: " + computerChoice.toUpperCase() + " You won!");
                     document.getElementById("wins").innerHTML = playerProfile.wins;
-                    document.getElementById("choices").innerHTML = playerProfile.choices;
+                    document.getElementById("playerChoices").innerHTML = playerProfile.choices;
+                    document.getElementById("computerChoices").innerHTML = computerProfile.choices;
                     break;
                 case "S":
                     playerProfile.ties = playerProfile.ties + 1;
                     window.alert("Person choice: " + personChoice.toUpperCase() + ", Computer choice: " + computerChoice.toUpperCase() + " You tied!");
                     document.getElementById("ties").innerHTML = playerProfile.ties;
-                    document.getElementById("choices").innerHTML = playerProfile.choices;
+                    document.getElementById("playerChoices").innerHTML = playerProfile.choices;
+                    document.getElementById("computerChoices").innerHTML = computerProfile.choices;
                     break;
             }
             break;
