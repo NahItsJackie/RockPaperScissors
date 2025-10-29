@@ -4,30 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
-    <link href="./src/css/global.css" rel="stylesheet">
+    <link href="../css/global.css" rel="stylesheet">
 </head>
 <body>
     <header>
         <nav class="topnav" id="myTopnav">
-            <a class="logo" href="./index.html">RPS</a>
-            <a class="navlink" href="./src/pages/og-rps.html">OG RPS</a>
-            <a class="navlink" href="./src/pages/leaderboard.html">Leaderboards</a>
+            <a class="logo" href="../../index.html">RPS</a>
+            <a class="navlink" href="#">OG-RPS</a>
+            <a class="navlink" href="leaderboard.html">Leaderboards</a>
         </nav>
     </header>
 
     <main>
         <h1>Rock, Paper, Scissors</h1>
-        <!-- <p>Choose R for rock, P for paper, or S for scissors:</p> -->
+        <p>Choose R for rock, P for paper, or S for scissors:</p>
         <p>Wins: <span id="wins"></span></p>
         <p>Losses: <span id="losses"></span></p>
         <p>Ties: <span id="ties"></span></p>
         <p>Player Choices: <span id="playerChoices"></span></p>
         <p>Computer Choices: <span id="computerChoices"></span></p>
-        <button onclick="gameInit('rock')">Rock</button>
-        <button onclick="gameInit('paper')">Paper</button>
-        <button onclick="gameInit('scissors')">Scissors</button>
-        <button onclick="reset()">Reset</button>
+        <button onclick="rpsInit()">Play</button>
+        <button onclick="quit()">Quit</button>
     </main>
-     <script src="./src/js/localsystem.js"></script>
+    <script src="../js/script.js"></script>
 </body>
 </html>

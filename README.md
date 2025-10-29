@@ -67,4 +67,4 @@ Your program will track scores, use loops, and interact with the player using br
 - [✅] Tracks wins, losses, ties, and individual choice counts  
 - [✅] Asks if player wants to continue  
 - [✅] Displays a final stats summary when the player quits  
-- [ ] (Bonus) Adds win percentage or persistent stats  
+- [✅] (Bonus) Adds win percentage or persistent stats  

@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: Inter;
+    src: url(./fonts/Inter-VariableFont_opsz\,wght.ttf);
+}
+
+@font-face {
+    font-family: Inter-Italic;
+    src: url(./fonts/Inter-Italic-VariableFont_opsz\,wght.ttf);
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    background-color: #b6ad90;
+    font-family: Inter;
+}
+
+header {
+    background-color: #414833;
+    color: #c2c5aa;
+    padding: 20px;
+}
+
+@media screen and (min-width: 600px) {
+    header {
+        height: 25px;
+    }
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    overflow: hidden;
+}
+
+nav a {
+    color: #c2c5aa;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+nav a:not(:first-child) {
+    margin: 0 10px;
+}
+
+/* Change the color of links on hover */
+nav a:hover:not(:first-child, .icon) {
+    padding-bottom: 2px;
+    border-bottom: 3px solid #936639;
+}
+
+.logo {
+    position: absolute;
+    left: 15px;
+}
+
+.logo a {
+    text-decoration: none;
+    color: #c2c5aa;
+}
+
+main {
+    width: 80%;
+    margin: 45px 0 0 10%;
+}
+
+p {
+    display: flex;
+    justify-content: flex-start;
+}
+#playerChoices, #computerChoices {
+    width: 80%;
+}
+
+footer {
+    background-color: #582f0e;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: #c2c5aa;
+    display: flex;
+}
+
+footer div {
+    width: 50%;
+    padding: 20px 15px;
+}

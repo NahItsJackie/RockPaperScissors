@@ -23,15 +23,18 @@ function rpsInit() {
     // User entered a value and clicked OK
         if (personChoice.length < 1) {
             window.alert("You didn't enter a choice.");
+            rpsInit()
         }
         else if (personChoice.length > 1) {
             window.alert("You did not choose R, P, or S for your choice.");
+            rpsInit()
         }
         else if (personChoice.length = 1) {
             if (personChoice.toUpperCase() !== "R"
                 && personChoice.toUpperCase() !== "P"
                 && personChoice.toUpperCase() !== "S") {
                     window.alert("You did not choose R, P, or S for your choice.");
+                    rpsInit()
             }
             else {
                 computerRound(computerRandomizer);
@@ -40,6 +43,7 @@ function rpsInit() {
         }
         else {
             window.alert("Hmmm not sure what happened. Please try again.");
+            rpsInit()
         }
     } else {
         quit();
@@ -47,7 +51,7 @@ function rpsInit() {
 }
 
 function computerRound (computerRandomizer) {
-    computerRandomizer = getRandomInt(99);
+    computerRandomizer = Math.floor(Math.random() * 99);
     if (computerRandomizer >= 0 && computerRandomizer <= 33) {
         computerChoice = "R";
     }
@@ -59,10 +63,6 @@ function computerRound (computerRandomizer) {
     }
     
     return computerChoice;
-}
-
-function getRandomInt(max) {
-  return Math.floor(Math.random() * max);
 }
 
 function roundResult (personChoice, computerChoice) {
